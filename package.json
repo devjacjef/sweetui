@@ -1,8 +1,18 @@
 {
   "name": "sweetui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sweetui.umd.cjs",
+  "module": "./dist/sweetui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sweetui.js",
+      "require": "./dist/sweetui.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -21,7 +31,6 @@
     "npm-run-all2": "^8.0.4",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
-    "vite-plugin-vue-devtools": "^8.0.6",
     "vue-tsc": "^3.2.5"
   },
   "engines": {
